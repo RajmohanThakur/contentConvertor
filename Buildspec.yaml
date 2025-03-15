@@ -16,7 +16,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t content-converter-repo:latest .
-      - docker tag content-converter-repo:latest $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag content-converter-repo:latest 047719645406.dkr.ecr.ap-south-1.amazonaws.com/content-converter-repo:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
