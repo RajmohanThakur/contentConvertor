@@ -3,6 +3,7 @@ version: 0.1
 phases:
   pre_build:
     commands:
+      - java -version
       - mvn clean install -DskipTests
       - echo Logging in to Amazon ECR...
       - aws --version
