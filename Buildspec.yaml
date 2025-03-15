@@ -22,12 +22,11 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - DOCKER_CONTAINER_NAME=content-converter-repo
-      - docker push $REPOSITORY_URI:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push 047719645406.dkr.ecr.ap-south-1.amazonaws.com/content-converter-repo:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"course-service","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"course-service","imageUri":"%s"}]' 047719645406.dkr.ecr.ap-south-1.amazonaws.com/content-converter-repo:latest > imagedefinitions.json
       - echo Writing image definitions file...
-      - printf '[{"name":"%s","imageUri":"%s"}]' $DOCKER_CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"%s","imageUri":"%s"}]' content-converter-repo 047719645406.dkr.ecr.ap-south-1.amazonaws.com/content-converter-repo:latest > imagedefinitions.json
       - echo $DOCKER_CONTAINER_NAME
       - echo printing imagedefinitions.json
       - cat imagedefinitions.json
