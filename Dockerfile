@@ -5,10 +5,10 @@ FROM openjdk:latest
 WORKDIR /app
 
 # Copy the built jar file from the target directory to the Docker container
-COPY target/ContentConvertor-0.0.1-SNAPSHOT.jar /app/content-convertor.jar
+COPY target/ContentConvertor-0.0.1-SNAPSHOT.jar /app
 
 # Expose port
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "/app/content-convertor.jar"s
+CMD ["java", "-jar", "content-convertor.jar"]
